@@ -11,7 +11,50 @@
     ></script>
   </head>
   <body>
+    <div class="main">
+      <!--warningmsgg-->
+      <div id="warningModal" class="modal4">
+        <div class="modal4-content">
+          <span class="close4">&times;</span>
+          <p id="warningMessage" class="warning-message"></p>
+        </div>
+      </div>
+      
+
+      <!--warning msg-->
+      <div id="warningMessage" class="warning-message"></div>
+      <!--EDIT POP-UP-->
+      <div id="editTaskModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Edit Task</p>
+          <input type="text" id="newTaskText">
+          <button id="updateTaskBtn">Update</button>
+        </div>
+      </div>
+      <!--delete POP-UP-->
+      <div id="deleteTaskModal" class="modal">
+        <div class="modal-content">
+          <p>Are you sure you want to delete this task?</p>
+          <div class="btn-group">
+            <button id="confirmDeleteBtn">Yes</button>
+            <button id="cancelDeleteBtn">No</button>
+          </div>
+        </div>
+      </div>
+      
+<!-- delete all/done-->
+<div id="confirmationModal" class="modal3">
+  <div class="modal3-content">
+    <p>Are you sure?</p>
+    <button id="confirmDelete">Confirm</button>
+    <button id="cancelDelete">Cancel</button>
+  </div>
+</div>
+
+
     <!--input section-->
+    <section class="Input">
     <h1>Todo Input</h1>
     <div class="container">
       <div class="input-container">
@@ -20,16 +63,31 @@
       </div>
       <button type="submit" class="add-button">Add new task</button>
     </div>
-
+  </section>
     <!--to do list section-->
+    <section class="ToDoList">
     <h1>ToDoList</h1>
     <div class="button-group">
-      <button class="action-button">All</button>
-      <button class="action-button">Done</button>
-      <button class="action-button">Todo</button>
+      <button class="action-button-all">All</button>
+      <button class="action-button-done">Done</button>
+      <button class="action-button-todo">Todo</button>
     </div>
+    <div class="todo-list-container">
 
+    </div>
+    <div class="Deletion" >
+    <button id="delete-done">Delete done tasks</button>
+    <button id="delete-all">Delete all tasks</button>
+    </div>
+  </section>
+  <section class="alternative">
+    <div class="alternative-content">
+      <div><i class="fa-solid fa-face-sad-cry"></i>
+      <span>There is no Tasks!</span></div>
+    </div>
+  </section>
     
     <script src="main.js"></script>
+  </div>
   </body>
 </html>

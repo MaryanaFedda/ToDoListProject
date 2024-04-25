@@ -5,10 +5,43 @@ body {
   background-color: #ffffff;
   box-sizing: border-box;
 }
+
+
 /*About section */
 h1 {
   text-align: center;
 }
+
+.ToDoList {
+  display: none;
+}
+
+.alternative{ 
+  margin-top: 5px;
+  padding-top:50px;
+  display: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  
+  background-color: rgba(75, 193, 243, 0.1);
+  
+}
+.alternative-content{display: flex;
+  flex-direction: column;
+  gap:50px;
+  width: 100%;
+align-items: center;
+justify-content: center;
+div{
+  display: flex;
+ 
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  i{font-size: 100px; color: rgb(255, 223, 13);}
+span{font-size: 50px; font-weight: bolder; color:#0dafbb;}}}
 
 .container {
   width: calc(100% - 40px);
@@ -55,7 +88,7 @@ h1 {
 .button-group {
     display: flex;
     justify-content: center;
-    .action-button {
+    .action-button-all, .action-button-done, .action-button-todo {
         flex: 1; 
         max-width: calc(33.33% - 5px); 
         padding: 8px 16px;
@@ -70,4 +103,244 @@ h1 {
       }
   }
   
+  /*to do list (tasks)*/
+.task-item{border-style: solid;
+  border-color: rgb(110, 106, 106); 
+  border-width: 1px;
+display: flex;
+border-radius: 5px;
+justify-content: space-between;
+padding:20px;
+margin-bottom: 10px;
+
+div{display: flex; gap:15px;}}
+/*buttons in bottom*/
+.todo-list-container{padding: 20px;}
+.Deletion{
+   width: 100%;
+  display: flex;
+  justify-content: center;
+gap:10px;
+  #delete-done, #delete-all{background-color: red;
+  padding:10px 0px;
+  width: 100%;
+border:none;
+border-radius: 5px;
+color:#ffffff;}
+}
+
+
+/*edit popup*/
+
+
+
   
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  
+}
+
+.modal-content {
+  background-color: #1dafc6;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 50%;
+  p{font-size: 20px; color: #fefefe; font-weight: bolder;}
+  input{padding: 10px; border-radius: 5px;}
+  button{border: none;
+  background-color: red;
+color: #ffffff;
+padding: 10px;
+border-radius: 5px;}
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+/*delete popup*/
+/* Modal styles */
+#deleteTaskModal{
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+
+.modal-content {
+  background-color: #0bc6ec;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+/* Button group styles */
+.btn-group {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #ddd; /* Darker background color on hover */
+}
+
+/* Close button styles */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+}
+/*checked tasks*/
+/* Styles for the square icon */
+.square-icon {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid black; /* Initial border for the square */
+  display: inline-block;
+}
+
+/* Styles for the checked (green checkmark) state of the square icon */
+.square-icon.checked::before {
+  content: "\2713"; /* Unicode checkmark character */
+  color: green;
+}
+
+/* Styles for the completed task (red text color) */
+.completed span {
+  color: red;
+}
+
+
+/*delete all/done btns*/
+/* CSS */
+
+.modal3 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal3-content {
+  background-color: #0dafbb;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 50%;
+  text-align: center;
+  color: rgb(250, 247, 247);
+  display: flex;
+  justify-content: center;
+  gap:10px;
+}
+
+#confirmDelete, #cancelDelete {
+  padding:10px;
+  background-color: rgb(194, 44, 44);
+  border: none;
+  border-radius: 5px;
+  color: #fefefe;
+
+}
+
+
+/*warning massage*/
+.modal4 {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal4-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 60%;
+}
+
+.close4 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close4:hover,
+.close4:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.warning-message {
+  color: red;
+  margin-top: 10px;
+}
+
+
+
