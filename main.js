@@ -315,7 +315,13 @@ document.addEventListener("DOMContentLoaded", function () {
   
         const closeButton = document.querySelector(".close4");
         closeButton.addEventListener("click", hideWarningModal);
-    }
+    // Close modal when clicking outside of it
+    window.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            hideWarningModal();
+        }
+    });
+}
     
     // Function to hide warning modal
     function hideWarningModal() {
