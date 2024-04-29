@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     todoButton.addEventListener("click", filterTasks);
     deleteDoneButton.addEventListener("click", deleteDoneTasks);
     deleteAllButton.addEventListener("click", deleteAllTasks);
-
+  
     // Close modal when clicking outside of delete popup
     window.addEventListener("click", function(event) {
         const modal = document.getElementById("deleteTaskModal");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         }
     });
-
+  
     // Close modal when clicking outside of edit popup
     window.addEventListener("click", function(event) {
         const editModal = document.getElementById("editTaskModal");
@@ -67,42 +67,42 @@ document.addEventListener("DOMContentLoaded", function () {
         todoInput.value = "";
     }
     
-    // Function to add a task from storage
-    function addTaskFromStorage(task) {
-        const toDoListSection = document.querySelector(".ToDoList");
-        const alternative = document.querySelector(".alternative");
-        toDoListSection.style.display = "block";
-        alternative.style.display = "none";
   
-        const taskItem = document.createElement("div");
-        taskItem.classList.add("task-item");
-        taskItem.innerHTML = `
-            <span>${task.text}</span>
-            <div>
-                <i class="fa-regular fa-square"></i>
-                <i class="fas fa-pen" style="color: yellow;"></i>
-                <i class="fas fa-trash" style="color: red;"></i>
-            </div>
-        `;
+   // Function to add a task from storage
+  function addTaskFromStorage(task) {
+    const toDoListSection = document.querySelector(".ToDoList");
+    const alternative = document.querySelector(".alternative");
+    toDoListSection.style.display = "block";
+    alternative.style.display = "none";
   
-        const taskIcons = taskItem.querySelectorAll(".fa-regular");
-        taskIcons.forEach(icon => {
-            icon.addEventListener("click", toggleTask);
-        });
+    const taskItem = document.createElement("div");
+    taskItem.classList.add("task-item");
+    taskItem.innerHTML = `
+        <span>${task.text}</span>
+        <div>
+            <i class="fa-regular fa-square"></i>
+            <i class="fas fa-pen" style="color: yellow;"></i>
+            <i class="fas fa-trash" style="color: red;"></i>
+        </div>
+    `;
   
-        todoList.appendChild(taskItem);
+    const taskIcons = taskItem.querySelectorAll(".fa-regular");
+    taskIcons.forEach(icon => {
+        icon.addEventListener("click", toggleTask);
+    });
   
-        const taskPen = taskItem.querySelector(".fa-pen");
-        taskPen.addEventListener("click", editTask);
+    todoList.appendChild(taskItem);
   
-        const taskTrash = taskItem.querySelector(".fa-trash");
-        taskTrash.addEventListener("click", deleteTask);
+    const taskPen = taskItem.querySelector(".fa-pen");
+    taskPen.addEventListener("click", editTask);
   
-        if (task.completed) {
-            toggleTask({ target: taskItem.querySelector(".fa-regular") });
-        }
+    const taskTrash = taskItem.querySelector(".fa-trash");
+    taskTrash.addEventListener("click", deleteTask); // add event listener for delete task
+  
+    if (task.completed) {
+        toggleTask({ target: taskItem.querySelector(".fa-regular") });
     }
-     
+  }
     // Function to toggle task completion
     function toggleTask(event) {
         const squareIcon = event.target;
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Display the modal
         const modal = document.getElementById("deleteTaskModal");
         modal.style.display = "block";
-
+  
         // Close modal when clicking the close icon (X)
         const closeIcon = document.querySelector("#deleteTaskModal .close");
         closeIcon.addEventListener("click", function() {
@@ -321,7 +321,7 @@ document.addEventListener("DOMContentLoaded", function () {
             hideWarningModal();
         }
     });
-}
+  }
     
     // Function to hide warning modal
     function hideWarningModal() {

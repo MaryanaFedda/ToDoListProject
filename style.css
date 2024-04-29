@@ -16,6 +16,8 @@ h1 {
   display: none;
 }
 
+
+
 .alternative{ 
   margin-top: 5px;
   padding-top:50px;
@@ -132,6 +134,10 @@ color:#ffffff;}
 
 /*edit popup*/
 
+
+
+  
+
 .modal {
   display: none;
   position: fixed;
@@ -175,6 +181,8 @@ border-radius: 5px;}
   text-decoration: none;
   cursor: pointer;
 }
+
+
 
 
 /*delete popup*/
@@ -335,3 +343,6 @@ button:hover {
   color: red;
   margin-top: 10px;
 }
+
+
+
